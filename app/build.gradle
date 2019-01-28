@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+apply from: '../gradle/config/android-common-config.gradle'
+
+android {
+    defaultConfig {
+        applicationId "br.com.watched"
+        versionCode versions.android.versionCode
+        versionName versions.android.versionName
+    }
+}
+
+dependencies {
+    implementation project(path: ':core')
+    implementation project(path: ':home')
+    implementation project(path: ':details')
+
+    kapt annotationProcessor()
+
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
